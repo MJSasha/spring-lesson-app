@@ -1,20 +1,25 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
 
-    private Music music;
+    private List<Music> musicList = new ArrayList<>();
     private String name;
     private int volume;
 
 
-    @Override
-    public String toString() {
-        return "Now playing: " + music.getSong() + "\nWith volume: " + volume;
+    public void playMusic() {
+        System.out.println("Volume is " + volume);
+        for (Music music : musicList) {
+            System.out.println("Now playing: " + music.getSong());
+        }
     }
 
 
-    public void setMusic(Music music) {
-        this.music = music;
+    public void setMusicList(List<Music> musicList){
+        this.musicList = musicList;
     }
 
     public String getName() {
