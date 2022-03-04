@@ -9,13 +9,8 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        Music music = context.getBean("rockMusic", Music.class);
-        MusicPlayer firstPlayer = new MusicPlayer(music);
-        firstPlayer.playMusic();
-
-        music = context.getBean("classicalMusic", Music.class);
-        MusicPlayer secondPlayer = new MusicPlayer(music);
-        secondPlayer.playMusic();
+        Computer computer = context.getBean("computer", Computer.class);
+        System.out.println(computer);
 
         context.close();
     }
